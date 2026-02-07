@@ -14,12 +14,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    // final screenWidth = MediaQuery.sizeOf(context).width;
-    // final isLargeScreen = screenWidth >= 600;
     return MaterialApp(
       home: Scaffold(
         body: SecondChallenge(),
-        appBar: AppBar(title: Text("Responsive Navbar Challenge")),
       ),
     );
   }
