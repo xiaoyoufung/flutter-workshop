@@ -49,7 +49,7 @@ class _SecondChallengeState extends State<SecondChallenge> {
     final screenWidth = MediaQuery.sizeOf(context).width;
     final isLargeScreen = screenWidth >= 600;
     return Scaffold(
-      body: isLargeScreen ? _bottomNav() : _leftNav(),
+      body: isLargeScreen ? _leftNav() : _bottomNav(),
     );
   }
 
