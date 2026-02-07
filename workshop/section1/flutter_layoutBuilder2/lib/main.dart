@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
             );
           }
 
-          // Samll screens
+          // Small screens
           return Column(
             children: [
               Container(height: 100, color: Colors.blue, child: const Center(child: Text('Header'))),
