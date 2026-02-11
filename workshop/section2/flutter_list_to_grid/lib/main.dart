@@ -34,11 +34,17 @@ class CatalogScreen extends StatelessWidget {
         title: const Text('Catalog'),
         actions: const [Icon(Icons.filter_list), SizedBox(width: 12), Icon(Icons.help_outline), SizedBox(width: 12)],
       ),
-      body: ListView.builder(
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 600, // 2 columns on mobile
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+          childAspectRatio: 4/3
+        ),
         itemCount: images.length,
         itemBuilder: (context, index) {
           return AspectRatio(
-            aspectRatio: 4 / 3,
+            aspectRatio: 4/3,
             child: Image.network(
               images[index],
               fit: BoxFit.cover,
