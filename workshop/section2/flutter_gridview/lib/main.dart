@@ -60,13 +60,19 @@ class _SwitchLayoutPageState extends State<SwitchLayoutPage> {
 
   Widget _buildGridView() {
     return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 12,
-        crossAxisSpacing: 12,
-        childAspectRatio: 1.2,
-      ),
-      // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 300),
+      // gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      //   // justify the fix of the column
+      //   crossAxisCount: 2,
+      //   // space between rows
+      //   mainAxisSpacing: 12,
+      //   // space between columns
+      //   crossAxisSpacing: 12,
+      //   // (width / height)
+      //   childAspectRatio: 1.2,
+      // ),
+      // the max width of the item
+      // Ipad gridview > listview
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 300),
       itemCount: items.length,
       itemBuilder: (context, index) {
         return Card(elevation: 2, child: Center(child: Text(items[index], style: const TextStyle(fontSize: 16))));
