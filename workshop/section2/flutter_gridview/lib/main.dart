@@ -26,7 +26,6 @@ class SwitchLayoutPage extends StatefulWidget {
 
 class _SwitchLayoutPageState extends State<SwitchLayoutPage> {
   bool isGrid = true;
-
   final items = List.generate(20, (index) => 'Item ${index + 1}');
 
   @override
@@ -45,7 +44,10 @@ class _SwitchLayoutPageState extends State<SwitchLayoutPage> {
           ),
         ],
       ),
-      body: Padding(padding: const EdgeInsets.all(12), child: isGrid ? _buildGridView() : _buildListView()),
+      body: Padding(
+        padding: const EdgeInsets.all(12),
+        child: isGrid ? _buildGridView() : _buildListView(),
+      ),
     );
   }
 
@@ -53,7 +55,12 @@ class _SwitchLayoutPageState extends State<SwitchLayoutPage> {
     return ListView.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return Card(child: ListTile(leading: const Icon(Icons.label), title: Text(items[index])));
+        return Card(
+          child: ListTile(
+            leading: const Icon(Icons.label),
+            title: Text(items[index]),
+          ),
+        );
       },
     );
   }
@@ -72,10 +79,22 @@ class _SwitchLayoutPageState extends State<SwitchLayoutPage> {
       // ),
       // the max width of the item
       // Ipad gridview > listview
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 300),
+      //   crossAxisCount: 3,
+      //   mainAxisSpacing: 32,
+      //   crossAxisSpacing: 32,
+      //   childAspectRatio: 5 / 5,
+      // ),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 300,
+      ),
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return Card(elevation: 2, child: Center(child: Text(items[index], style: const TextStyle(fontSize: 16))));
+        return Card(
+          elevation: 2,
+          child: Center(
+            child: Text(items[index], style: const TextStyle(fontSize: 16)),
+          ),
+        );
       },
     );
   }
